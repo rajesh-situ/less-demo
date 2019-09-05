@@ -1,0 +1,22 @@
+#root {
+  background: red;
+}
+header {
+  font-size: 1.6rem;
+  color: blue;
+}
+@media (max-width: 500px) {
+  header {
+    font-size: 2rem;
+    color: red;
+  }
+}
+header {
+  width: 100%;
+  text-align: center;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

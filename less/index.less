@@ -1,0 +1,107 @@
+//Variables
+// @primary-color: #FF69B4;    // Hotpink
+// @secondary-color: #008080;  // Teal
+
+
+
+#root {
+    background: red;
+}
+
+// header {
+//     display: flex;
+//     justify-content: space-between;
+//     margin: 20px 0;
+//     margin-top: 20px;
+//     align-items: baseline;
+//     h1 {
+//         font-size: 2rem;
+//     }
+//     nav {
+//         display: flex;
+//         width: 300px;
+//         justify-content: space-evenly;
+//         a {
+//         font-size: 1.8rem;
+//         color: #2324d7;
+//     }
+// }
+// }
+
+// header {
+//     display: flex;
+//     justify-content: space-between;
+//     margin: 20px 0;
+//     margin-top: 20px;
+//     align-items: baseline;
+//     @media (max-width: 800px){      //Our styles for Tablet
+//       flex-direction: column;
+//       width: 100%;
+//       margin-top: 30px;
+//     }
+//     @media (max-width: 500px){     //Our styles for Mobile
+//       flex-direction: row;
+//       width: 80%;
+//       margin-top: 10px;
+//     }
+//   }
+
+// header{
+//     background: @primary-color;
+//     nav{
+//       a{
+//         color: @secondary-color;
+//         text-decoration: none;
+//         &:hover{
+//           color: @primary-color;
+//           text-decoration: underline;
+//         }
+//        }
+//       } 
+//      }
+
+//Variables
+// @primary-color: #FF69B4;     // Hotpink
+// @secondary-color: #008080;  // Teal
+// //Page Styles
+// div{
+//   a{
+//     background: @primary-color;
+//     color: @secondary-color;
+//     &:hover{
+//     background: darken(@primary-color, 10%);
+//    }
+//   }
+// }
+
+// Escape Variable
+@tablet: ~"(max-width: 800px)";
+@mobile: ~"(max-width: 500px)";
+header{
+ font-size: 1.6rem;
+ color: blue;
+ @media @mobile{
+   font-size: 2rem;
+   color: red;
+  }
+}
+
+// Namespaces
+#navigation(){
+    .layout(@j-content, @a-items){
+       display: flex;
+       justify-content: @j-content;
+       align-items: @a-items;
+     }
+    .border(@thick, @type, @color){
+       border: @thick, @type, @color;
+     }
+  }
+  //Page Styles
+  header{
+   width: 100%;
+   text-align: center;
+   nav{
+     #navigation.layout(space-between, center);
+   }
+  }
